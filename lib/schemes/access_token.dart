@@ -31,6 +31,9 @@ class AccessToken {
     if (params == null) {
       throw Exception();
     }
+
+    print('hamid**** inside getAccessToken $params');
+
     return AccessToken(params);
   }
 }
