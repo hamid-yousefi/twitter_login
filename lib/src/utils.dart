@@ -101,7 +101,6 @@ Future<Map<String, dynamic>> httpGetFromBearerToken(
 
     print('token ********** Bearer $bearerToken  ****url $url  ****data ${Uri.parse(url).replace(queryParameters: query)}');
 
-
     final res = await _httpClient.get(
       Uri.parse(url).replace(queryParameters: query),
       headers: <String, String>{'Authorization': 'Bearer $bearerToken'},

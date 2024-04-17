@@ -126,6 +126,8 @@ class TwitterLogin {
         throw const CanceledByUserException();
       }
 
+      print('v1 queries***** $queries');
+
       final token = await AccessToken.getAccessToken(
         apiKey,
         apiSecretKey,
@@ -244,6 +246,10 @@ class TwitterLogin {
       }
 
       final queries = Uri.splitQueryString(Uri.parse(resultURI!).query);
+
+      print('v2 queries***** $queries');
+
+
       if (queries['error'] != null) {
         throw Exception('Error Response: ${queries['error']}');
       }

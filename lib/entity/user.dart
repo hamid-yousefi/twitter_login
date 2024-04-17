@@ -68,6 +68,7 @@ class User {
     String accessTokenSecret,
   ) async {
     try {
+
       final authParams = requestHeader(
         apiKey: apiKey,
         oauthToken: accessToken,
@@ -102,8 +103,6 @@ class User {
       if (token?.isEmpty ?? true) {
         throw Exception();
       }
-
-      print('token ********** $token');
 
       final params = await httpGetFromBearerToken(
         '$USER_LOCKUP_URI/$userId',
