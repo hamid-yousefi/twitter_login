@@ -103,6 +103,8 @@ class User {
         throw Exception();
       }
 
+      print('token ********** $token');
+
       final params = await httpGetFromBearerToken(
         '$USER_LOCKUP_URI/$userId',
         query: {'user.fields': 'id,name,username,profile_image_url'},
