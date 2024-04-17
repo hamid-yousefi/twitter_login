@@ -105,11 +105,12 @@ Future<Map<String, dynamic>> httpGetFromBearerToken(
       Uri.parse(url).replace(queryParameters: query),
       headers: <String, String>{'Authorization': 'Bearer $bearerToken'},
     );
+    print('res******* ${res.statusCode} *** ${res.headers} *** ${res.request?.headers} *** ${res.body}');
     if (res.statusCode != 200) {
       throw HttpException('Failed ${res.reasonPhrase}');
     }
 
-    print('res.body ${res.body}');
+
     return jsonDecode(res.body) as Map<String, dynamic>;
   } on Exception catch (error) {
     throw Exception(error);
