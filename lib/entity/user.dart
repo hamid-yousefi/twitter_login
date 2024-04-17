@@ -105,7 +105,7 @@ class User {
       }
 
       final params = await httpGetFromBearerToken(
-        '$USER_LOCKUP_URI/$userId',
+        '$USER_LOCKUP_URI/ids:$userId,',
         query: {'user.fields': 'id,name,username,profile_image_url'},
         bearerToken: token!,
       );
