@@ -106,10 +106,11 @@ class User {
     String userId,
   ) async {
     try {
-      final token = await Oauth2.getBearerToken(apiKey: apiKey, apiSecretKey: apiSecretKey);
+      final token = await Oauth2.getBearerToken(apiKey: accessToken, apiSecretKey: accessTokenSecret);
       if (token?.isEmpty ?? true) {
         throw Exception();
       }
+
 
       final params = await httpGetFromBearerToken(
         '$USER_LOCKUP_URI/ids:$userId,',
