@@ -76,7 +76,6 @@ class User {
 
       print('authParams $authParams  apiKey $apiKey apiSecretKey $apiSecretKey accessTokenSecret $accessTokenSecret');
 
-
       final params = await httpGet(
         ACCOUNT_VERIFY_URI,
         authHeader: authParams,
@@ -84,6 +83,10 @@ class User {
         apiSecretKey: apiSecretKey,
         tokenSecret: accessTokenSecret,
       );
+
+
+      print('user params $params');
+
       return User(params);
     } on Exception {
       rethrow;
