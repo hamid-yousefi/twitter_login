@@ -76,8 +76,8 @@ class User {
       print('authParams $authParams  apiKey $apiKey apiSecretKey $apiSecretKey accessTokenSecret $accessTokenSecret');
 
       final params = await httpGet(
-        // ACCOUNT_VERIFY_URI,
-        '$USER_LOCKUP_URI/me',
+        ACCOUNT_VERIFY_URI,
+        // '$USER_LOCKUP_URI/me',
         authHeader: authParams,
         apiKey: apiKey,
         apiSecretKey: apiSecretKey,
