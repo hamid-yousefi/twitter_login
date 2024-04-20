@@ -23,9 +23,6 @@ class Oauth2 {
     );
 
     final json = jsonDecode(res.body) as Map<String, dynamic>;
-
-    print("bearer token ${json}");
-
     return json.get('access_token');
   }
 }

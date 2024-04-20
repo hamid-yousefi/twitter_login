@@ -73,8 +73,6 @@ class User {
         oauthToken: accessToken,
       );
 
-      print('authParams $authParams  apiKey $apiKey apiSecretKey $apiSecretKey accessTokenSecret $accessTokenSecret');
-
       final params = await httpGet(
         ACCOUNT_VERIFY_URI,
         // '$USER_LOCKUP_URI/me',
@@ -83,9 +81,6 @@ class User {
         apiSecretKey: apiSecretKey,
         tokenSecret: accessTokenSecret,
       );
-
-
-      print('user params $params');
 
       return User(params);
     } on Exception {

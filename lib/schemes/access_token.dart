@@ -32,10 +32,6 @@ class AccessToken {
       throw Exception();
     }
 
-   print('hamid**** inside getAccessToken $params');
-
-    // hamid**** inside getAccessToken {oauth_token: 1298222707620937728-ObDrnQK1sXUdtSE1404auHan0ZCw2A, oauth_token_secret: 5QNaZH1bHPn5Z5VEI1mzIOhMhDzrrbEdKtXFoszMVW1Wc, user_id: 1298222707620937728, screen_name: hamid_m99}
-
     return AccessToken(params);
   }
 }

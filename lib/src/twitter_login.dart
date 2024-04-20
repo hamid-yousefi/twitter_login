@@ -125,10 +125,6 @@ class TwitterLogin {
       if (queries['denied'] != null) {
         throw const CanceledByUserException();
       }
-
-      print('v1 queries***** $queries');
-      // v1 queries***** {oauth_token: gJXsCQAAAAABsW9CAAABjuwcOm0, oauth_verifier: G1S18VFwoy2WW9hGtfT8zlW6bgXMbbwI}
-
       final token = await AccessToken.getAccessToken(
         apiKey,
         apiSecretKey,
@@ -247,9 +243,6 @@ class TwitterLogin {
       }
 
       final queries = Uri.splitQueryString(Uri.parse(resultURI!).query);
-
-      print('v2 queries***** $queries');
-
 
       if (queries['error'] != null) {
         throw Exception('Error Response: ${queries['error']}');

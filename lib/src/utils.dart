@@ -99,13 +99,10 @@ Future<Map<String, dynamic>> httpGetFromBearerToken(
   try {
     final _httpClient = http.Client();
 
-    print('token ********** Bearer $bearerToken  ****url $url  ****data ${Uri.parse(url).replace(queryParameters: query)}');
-
     final res = await _httpClient.get(
       Uri.parse(url).replace(queryParameters: query),
       headers: <String, String>{'Authorization': 'Bearer $bearerToken'},
     );
-    print('res******* ${res.statusCode} *** ${res.headers} *** ${res.request?.headers} *** ${res.body}');
     if (res.statusCode != 200) {
       throw HttpException('Failed ${res.reasonPhrase}');
     }
